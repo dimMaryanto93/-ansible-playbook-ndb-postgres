@@ -1,0 +1,6 @@
+keepalived_version: '*2.1.5*'
+haproxy_version: '*1.8.27*'
+postgres_version: 15
+enabled_postgresql_ha: true
+etcd_working_dir: /var/lib/etcd
+etcd_conf_file: /etc/etcd
