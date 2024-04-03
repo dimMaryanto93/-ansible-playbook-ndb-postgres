@@ -18,4 +18,14 @@
         name: etcd 
         state: stopped 
         enabled: false
-    
+
+- name: Running precheck postgresql
+  hosts: ['all']
+  become: true
+  tasks:
+    - name: Check NDB precheck
+      command: /opt/ndb/era_linux_prechecks.sh -t postgres_database -d
+      register: ndb_precheck_result
+
+    - debug: 
+        msg: "{{ ndb_precheck_result }}"
