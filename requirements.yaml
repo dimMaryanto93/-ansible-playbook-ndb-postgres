@@ -1,6 +1,8 @@
 ---
 collections:
   - ansible.posix
+  - community.postgresql
+  - community.general
 roles:
   - dimmaryanto93.keepalived
   - dimmaryanto93.ha_proxy
