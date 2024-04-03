@@ -1,5 +1,5 @@
-keepalived_version: '*2.1.5*'
-haproxy_version: '*1.8.27*'
+keepalived_version: '*{{ keepalived_engine_version }}*'
+haproxy_version: '*{{ haproxy_engine_version }}*'
 postgres_version: 15
 enabled_postgresql_ha: true
 etcd_working_dir: /var/lib/etcd
