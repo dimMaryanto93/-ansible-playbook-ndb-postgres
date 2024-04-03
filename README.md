@@ -58,6 +58,6 @@ password: password
 Pertama kita clone dulu repository ini, dengan perintah berikut:
 
 ```bash
-git clone https://github.com/dimMaryanto93/gitlab-devops-automation.git --depth 1 && \
-cd gitlab-devops-automation/ansible ## masuk ke folder ansible
+git clone https://github.com/dimMaryanto93/ansible-playbook-ndb-postgres.git --depth 1 && \
+cd ansible-playbook-ndb-postgres ## masuk ke folder ansible
 ```
