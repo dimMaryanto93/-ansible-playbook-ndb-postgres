@@ -1,23 +1,23 @@
-- name: Provision PostgreSQL for NDB
-  hosts: ['all']
-  become: true
-  roles: 
-    - dimmaryanto93.keepalived
-    - dimmaryanto93.haproxys
-    - dimmaryanto93.postgres_community
-    - dimmaryanto93.nutanix_db-patch-os
+# - name: Provision PostgreSQL for NDB
+#   hosts: ['all']
+#   become: true
+#   roles: 
+#     - dimmaryanto93.keepalived
+#     - dimmaryanto93.ha_proxy
+#     - dimmaryanto93.postgres_community
+#     - dimmaryanto93.nutanix_db-patch-os
 
-- name: Post install config
-  hosts: ['all']
-  become: true
-  tasks:
-    - name: Remove data etcd
-      command: "rm -rf {{ etcd_working_dir }}/*"
-    - name: Disable and Stop service etcd
-      service: 
-        name: etcd 
-        state: stopped 
-        enabled: false
+# - name: Post install config
+#   hosts: ['all']
+#   become: true
+#   tasks:
+#     - name: Remove data etcd
+#       command: "rm -rf {{ etcd_working_dir }}/*"
+#     - name: Disable and Stop service etcd
+#       service: 
+#         name: etcd 
+#         state: stopped 
+#         enabled: false
 
 - name: Running precheck postgresql
   hosts: ['all']
@@ -28,4 +28,4 @@
       register: ndb_precheck_result
 
     - debug: 
-        msg: "{{ ndb_precheck_result }}"
+        msg: "{{ ndb_precheck_result.stdout_lines }}"

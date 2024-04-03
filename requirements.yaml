@@ -3,6 +3,6 @@ collections:
   - ansible.posix
 roles:
   - dimmaryanto93.keepalived
-  - dimmaryanto93.haproxy
+  - dimmaryanto93.ha_proxy
   - dimmaryanto93.postgres_community
   - dimMaryanto93.nutanix_db-patch-os
